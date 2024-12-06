@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opções</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link href="{% static 'fonts/Minecrafter.Alt.ttf' %}" rel="stylesheet">
+</head>
+<body id="OpcoesMine">
+  <div class="baixo2">
+    <h2>Programacao para Internet</h2>
+    <div class="container3">
+      <div class="bloco2">
+        <h2>Endereco</h2>
+        <p>IFRN - Campus Santa Cruz/RN</p>
+      </div>
+      <div class="divisor2">
+        <img src="img/Linha.svg" title="Linha.svg" alt="Linha.svg">
+    </div>
+      <div class="bloco2">
+        <h2>Professor</h2>
+        <p>Prof. Marcelo Figueiredo Barbosa Junior</p>
+      </div>
+      <div class="divisor2">
+        <img src="img/Linha.svg" title="Linha.svg" alt="Linha.svg">
+    </div>
+      <div class="bloco2">
+        <h2>Alunos</h2>
+        <p>Leticia Gabriele Alves de Souza</p>
+        <p>Maria Rita Silva Amador</p>
+        <p>Pedro Henrique Silva da Costa</p>
+      </div>
+    </div>
+  </div>
+  <div class="divisor2">
+    <span class="divisor-linha"></span>
+  </div>
+  <div class="copyright2">
+    <p>Todos os direitos reservados &copy; 2024</p>
+    <p>Todos os direitos reservados Manual do dev</p>
+</div>
+<footer id="footer2">
+  {% comment %} <img src="{% static 'imgs/telainicio.gif' %}" alt="Tela de Início"> {% endcomment %}
+  <button id="cancelar">Done</button>
+</footer>
+<script>
+  document.getElementById('cancelar').addEventListener('click', function() {
+    location.href = "{% url 'index' %}";
+  });
+</script>
+</body>
+</html>

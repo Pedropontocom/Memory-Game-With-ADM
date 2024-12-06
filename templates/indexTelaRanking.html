@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ranking</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body id="RankMine">
+    <div class="rankeada">
+      <table>
+        <thead>
+          <div>
+            <th>
+              <p>Posicao</p>
+            </th>
+            <th>
+              <p>Nome</p>
+            </th>
+            <th>
+              <p>Flips</p>
+            </th>
+            <th>
+              <p>Tempo</p>
+            </th>
+            <th>
+              <p>Data Hora</p>
+            </th>
+          </div>
+        </thead>
+        {% for x in player %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{x.nome_jogador}}</td>
+          <td>{{x.tentativas}}</td>
+          <td>{{x.tempo}}</td>
+          <td>{{x.data_hora}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <footer id="footer2">
+      <button id="cancelar">Done</button>
+    </footer>
+    <script>
+      document.getElementById("cancelar").addEventListener("click", function () {
+          location.href = "{% url 'index' %}";
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}   
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <script defer src="{% static './js/script2.js' %}"></script> 
+</head>
+
+<body id="Menu">
+  <div class="container2">
+    <img class="logo" src="{% static "./imgs/logo.svg" %}">
+    <div class="menu">
+      <button id="btn-minecraft1">Singleplayer</button>
+      <button id="btn-minecraft2">Ranking</button>
+      <button id="btn-minecraft3">Minecraft Realms</button>
+    </div>
+      <div class="menu-options">
+      <button id="btn-minecraft4">Options...</button>
+      <button id="btn-minecraft5">Quit Game</button>
+    </div>
+  </div>
+  <script>
+    document.getElementById('btn-minecraft1').addEventListener('click', function() {
+      window.location.href = "{% url 'indexTelaNome' %}";
+    });
+    document.getElementById('btn-minecraft2').addEventListener('click', function() {
+      window.location.href = "{% url 'indexTelaRanking' %}";
+    });
+    document.getElementById('btn-minecraft4').addEventListener('click', function() {
+      window.location.href = "{% url 'indexTelaOpicoes' %}";
+    });
+  </script>
+</body>
+</html>

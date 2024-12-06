@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da memoria</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <script defer src="{% static './js/script.js' %}"></script> 
+</head>
+<body>
+  <main>
+   <header>
+        <h1 class="title">Jogo da memoria</h1>
+        <span class="player"></span>
+        <div class="contadores">
+          <div class="moves">0 movimentos</div>
+          <span class="moves">Tempo: <span class="timer">00</span></span>
+        </div>
+        <button id="reloadButton">Retornar tela inicial</button>
+      </header>
+      <div class="grid"></div>
+    </div>
+    <form id="formi" action="{% url 'add' %}" method="POST">
+      {% csrf_token %}
+      <input id="nome_jogador" type="text" name="nome_jogador" class="indicador" style="display: none;">
+      <input id="tentativas" type="text" name="tentativas" class="indicador" style="display: none;">
+      <input id="tempo" type="text" name="tempo" class="indicador" style="display: none;">
+    </form>
+  </main>
+  <audio autoplay loop>
+    <source src="{% static "music/08 - Minecraft.mp3" %}">
+  </audio>
+  <script>
+    document.getElementById('reloadButton').addEventListener('click', function() {
+      location.href = "{% url 'index' %}";
+    });
+  </script>
+</body>
+</html>
