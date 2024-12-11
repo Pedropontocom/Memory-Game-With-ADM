@@ -9,7 +9,14 @@
   <script defer src="{% static './js/script2.js' %}"></script> 
   <style>
     #logoutForm {
-      width: 100%;
+      width: calc(100% / 2);
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      gap: 0.2rem;
+    }
+    .menu-options {
+      width: calc(100% / 3);
       justify-content: center;
       align-items: center;
       display: flex;
@@ -31,14 +38,13 @@
       <button id="btn-minecraft2">Ranking</button>
       <button id="btn-minecraft3">Minecraft Realms</button>
     </div>
-    <form id="logoutForm" method="post" action="{% url 'logout' %}" >
-      <div class="menu-options">
+    <div class="menu-options">
       <button id="btn-minecraft4">Options...</button>
+      <form id="logoutForm" method="post" action="{% url 'logout' %}" >
         {% csrf_token %}
         <button id="btn-minecraft5">Quit Game</button>
       </form>
     </div>
-  </form>
   </div>
   <script>
     document.getElementById('btn-minecraft1').addEventListener('click', function() {
