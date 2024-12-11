@@ -5,3 +5,4 @@
 document.getElementById('btn-minecraft3').addEventListener('click', function() {
   location.href = 'https://pt.minecraft.wiki';
 });
+ 

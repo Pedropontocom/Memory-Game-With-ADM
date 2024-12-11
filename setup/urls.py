@@ -19,7 +19,7 @@ from django.urls import path
 from app import views
 from app.views import CustomLoginView
 from django.contrib.auth.views import LogoutView
-from django.contrib.auth import views as auth_views
+from django.contrib.auth import views as auth_views 
 
 
 

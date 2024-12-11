@@ -36,7 +36,7 @@ def indexTelaRanking(request):
 
 def custom_logout(request):
     logout(request)
-    return redirect('login')  
+    return redirect('login')   
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'

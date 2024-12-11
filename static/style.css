@@ -216,7 +216,7 @@ header {
   gap: 0.2rem;
 }
 #logoutForm {
-  width: calc(100% / 3);
+  width: calc(100% / 3); 
   display: flex;
   gap: 0.2rem;
 }
