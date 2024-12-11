@@ -40,20 +40,19 @@ def custom_logout(request):
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'
-    success_url = reverse_lazy('indexTelaNome')  # Substitua pelo nome correto da rota
-
+    success_url = reverse_lazy('indexTelaNome') 
+    
     def post(self, request, *args, **kwargs):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        # Verifica se o usuário já existe
         user = User.objects.filter(username=username).first()
         if not user:
-            # Cria um novo usuário
+
             user = User.objects.create_user(username=username, password=password)
             messages.success(request, 'Usuário criado com sucesso! Faça login para continuar.')
 
-        # Autentica o usuário
+
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
