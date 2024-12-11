@@ -1,11 +1,65 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-  {% load static %}
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title> 
   <link rel="stylesheet" href="{% static './style.css' %}">
+  <style>
+    body {
+      background: url("../static/imgs/fundo.webp");
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2em;
+    padding: 30px;
+    margin: 0 0 30px;
+    border-radius: 5px;
+    font-family: minecraft;
+    }
+    #loginForm {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: center;
+      color: white;
+    }
+    #username, #password {
+      border: 2px solid rgb(64, 64, 64);
+      color: rgb(200, 200, 200);
+      font-size: 1em;
+      background-color: #000000;
+      margin-bottom: 15px;
+      max-width: 300px;
+      outline: none;
+      padding: 10px;
+      width: 100%;
+    }
+    #submitButton {
+      background: #727272;
+      color: rgb(247, 247, 247);
+      width: 100%;
+      padding: 1rem 0;
+      margin-bottom: 0.75rem;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8);
+      font-size: 1.25rem;
+      letter-spacing: 0.025em;
+      border: 2px solid rgba(0, 0, 0, 1);
+      box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.5),
+        inset -3px -3px 0 rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      z-index: 1;
+    }
+    #submitButton:hover {
+      background: rgba(115, 107, 221, 1);
+    }
+    
+    #submitButton:focus {
+      color: rgb(246, 246, 44);
+      outline: none;
+    }
+  </style>
 </head>
 <body>
   {% if messages %}
@@ -17,10 +71,10 @@
     {% endif %}
     <form id="loginForm" method="post" action="{% url 'login' %}">
       {% csrf_token %}
-      <label for="username">Usuário:</label>
+      <label for="username">USUARIO:</label>
       <input type="text" id="username" name="username" required>
       <br>
-      <label for="password">Senha:</label>
+      <label for="password">SENHA:</label>
       <input type="password" id="password" name="password" required>
       <br>
       <button type="submit" id="submitButton">Entrar</button>
