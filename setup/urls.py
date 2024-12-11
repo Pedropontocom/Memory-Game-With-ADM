@@ -17,7 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app import views
-from app.views import indexTelaNome, index
+from app.views import CustomLoginView
+from django.contrib.auth.views import LogoutView
+from django.contrib.auth import views as auth_views
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +31,6 @@ urlpatterns = [
     path('opcoes/', views.indexTelaOpicoes, name='indexTelaOpicoes'),
     path('rank/', views.indexTelaRanking, name='indexTelaRanking'),
     path("add/", views.add, name='add'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
 ]

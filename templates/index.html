@@ -19,7 +19,11 @@
     </div>
       <div class="menu-options">
       <button id="btn-minecraft4">Options...</button>
-      <button id="btn-minecraft5">Quit Game</button>
+      <form id="logoutForm" method="post" action="{% url 'logout' %}" >
+        {% csrf_token %}
+        <button id="btn-minecraft5">Quit Game</button>
+      </form>
+      {% comment %} <button id="btn-minecraft5">Quit Game</button> {% endcomment %}
     </div>
   </div>
   <script>
@@ -31,6 +35,9 @@
     });
     document.getElementById('btn-minecraft4').addEventListener('click', function() {
       window.location.href = "{% url 'indexTelaOpicoes' %}";
+    });
+    document.getElementById('btn-minecraft5').addEventListener('click', function() {
+      window.location.href = "{% url 'logout' %}";
     });
   </script>
 </body>
