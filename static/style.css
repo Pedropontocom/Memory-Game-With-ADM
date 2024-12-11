@@ -215,8 +215,17 @@ header {
   display: flex;
   gap: 0.2rem;
 }
+#logoutForm {
+  width: calc(100% / 3);
+  display: flex;
+  gap: 0.2rem;
+}
 
 .menu-options .btn-minecraft:first-child {
+  margin-right: 10px;
+}
+
+#logoutForm {
   margin-right: 10px;
 }
 
@@ -238,12 +247,16 @@ header {
     inset -3px -3px 0 rgba(0, 0, 0, 0.5);
   cursor: pointer;
   display: block;
+  align-items: center;
+  display: flex;
 }
 
 #btn-minecraft1,
 #btn-minecraft2,
 #btn-minecraft3 {
   width: 100%;
+  align-items: center;
+      display: flex;
 }
 
 #btn-minecraft1:hover,
@@ -401,7 +414,7 @@ header {
   font-family: minecraft;
 }
 
-.login_form, #loginForm {
+.login_form {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -422,9 +435,7 @@ header {
   font-size: 1.5em;
 }
 
-.login_input, 
-#username,
-#password {
+.login_input{
   border: 2px solid rgb(46, 46, 46);
   color: rgb(247, 247, 247);
   font-size: 1em;
@@ -436,7 +447,7 @@ header {
   width: 100%;
 }
 
-.login_button, #submitButton {
+.login_button {
   background: #727272;
   color: rgb(247, 247, 247);
   width: 100%;
@@ -452,13 +463,11 @@ header {
   z-index: 1;
 }
 
-.login_button:hover,
-#submitButton:hover {
+.login_button:hover{
   background: rgba(115, 107, 221, 1);
 }
 
-.login_button:focus,
-#submitButton:focus {
+.login_button:focus {
   color: rgb(246, 246, 44);
   outline: none;
 }
