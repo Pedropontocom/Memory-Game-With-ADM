@@ -18,7 +18,7 @@ def indexTelaNome(request):
 
 def indexTelaGame(request):
   return render(request, 'indexTelaGame.html')
-
+ 
 def add(request):
   x=request.POST['nome_jogador']
   y=request.POST['tentativas']
