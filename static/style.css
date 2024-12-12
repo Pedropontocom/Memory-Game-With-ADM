@@ -247,6 +247,7 @@ header {
     inset -3px -3px 0 rgba(0, 0, 0, 0.5);
   cursor: pointer;
   display: block;
+  justify-content: center;
   align-items: center;
   display: flex;
 }
